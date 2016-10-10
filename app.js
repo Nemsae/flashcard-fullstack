@@ -106,7 +106,7 @@ app.get('/flashcards/:category', (req, res) => {
 //  PUT update a card by ID
 app.put('/flashcards/:id/', (req, res) => {
   let id = req.params.id;
-  console.log('id00: ', id);
+  console.log('id: ', id);
   FlashCard.updateCard(id, req.body, (err, updatedCards) => {
     if (err) return res.status(400).send(err);
 

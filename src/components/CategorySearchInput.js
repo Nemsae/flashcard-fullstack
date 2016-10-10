@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// import CardSearchInput from './CardSearchInput';
 import CardActions from '../actions/CardActions';
 import CardsStore from '../stores/CardsStore';
 
@@ -34,7 +33,6 @@ export default class CategorySearchInput extends Component {
 
   _grabInput (e) {
     let input = e.target.value;
-    // console.log('input: ', input);
     this.setState({
       category: input
     });
@@ -42,9 +40,7 @@ export default class CategorySearchInput extends Component {
 
   _getCategories () {
     let { category } = this.state;
-    // console.log('category: ', category);
     let categories = category.split(', ');
-    // console.log('categories: ', categories);
     CardActions.fetchCardByCategory(categories);
   }
 
@@ -55,8 +51,7 @@ export default class CategorySearchInput extends Component {
       <div>
         <h3>{message}</h3>
         <input onChange={this._grabInput} type='text' placeholder='Search by Category' />
-        <button onClick={this._getCategories} className='btn btn-default'>Start</button>
-        {/* <button className='btn btn-default'>Edit</button> */}
+        <button onClick={this._getCategories} className='btn btn-success'>√</button>
       </div>
     );
   }

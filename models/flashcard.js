@@ -128,18 +128,21 @@ exports.updateCard = function (id, body, cb) {
   fs.readFile(filename, (err, buffer) => {
     if (err) return cb(err);
 
-    let key = (Object.keys(body)).toString();
-    let value = body[key];
+    // let key = (Object.keys(body)).toString();
+    console.log('body: ', body);
+    // let value = body[key];
     let cards = JSON.parse(buffer);
     let updatedCards = cards.map((card) => {
       if (card.id === id) {
         console.log('Sanity');
-        card[key] = value;
+        card = body;
         return card;
       } else {
         return card;
       }
     });
+
+    console.log('updatedCards: ', updatedCards);
 
     exports.write(updatedCards, cb);
     cb(null, updatedCards);

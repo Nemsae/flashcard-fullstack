@@ -52,7 +52,7 @@ export default class CardDiv extends Component {
   _submitChanges (id, e) {
     let { editedCard } = this.state;
     // console.log('id: ', id);
-    console.log('editedCard: ', editedCard);
+    // console.log('editedCard: ', editedCard);
     e.preventDefault();
     CardActions.sendEditedCard(editedCard);
   }
@@ -79,28 +79,18 @@ export default class CardDiv extends Component {
                   <input onChange={this._inputChange} id='category' type='text' defaultValue={card.category} />
                 </div>
                 <div className='modal-footer text-center'>
-                  <button onClick={this._submitChanges.bind(null, card.id)} className='btn btn-primary'>Submit</button>
+                  <button onClick={this._submitChanges.bind(null, card.id)} className='btn btn-primary' data-dismiss='modal'>Submit</button>
                 </div>
               </div>
             </div>
           </div>
         </div>;
     }
-    console.log('card in CardDiv: ', card);
+
     return (
       <div>
         {Card}
       </div>
-      // {/* <div>
-      //   {
-      //     <div key={card.id}>
-      //       <h3>{card.category}</h3>
-      //       <h5>{card.question}</h5>
-      //       <h5>{card.answer}</h5>
-      //       {/* <button className='btn btn-default' onClick={this._editCard}>Edit</button> */}
-      //     </div>
-      //   }
-      // </div> */}
     );
   }
 }

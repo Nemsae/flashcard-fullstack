@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// import CardSearchInput from './CardSearchInput';
 import CardActions from '../actions/CardActions';
 
 export default class CardSearchInput extends Component {
@@ -17,7 +16,6 @@ export default class CardSearchInput extends Component {
 
   _grabInput (e) {
     let input = e.target.value;
-    console.log('input: ', input);
     this.setState({
       id: input
     });
@@ -33,7 +31,6 @@ export default class CardSearchInput extends Component {
       <div>
         <input onChange={this._grabInput} type='text' placeholder='Search by ID' />
         <button onClick={this._getCard} className='btn btn-default'>Get</button>
-        {/* <button className='btn btn-default'>Edit</button> */}
       </div>
     );
   }

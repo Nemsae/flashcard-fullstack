@@ -3,16 +3,9 @@ import { Link } from 'react-router';
 import classNames from 'classnames';
 
 export default class Layout extends Component {
-  // constructor () {
-  //   super();
-  // }
 
   render () {
     let path = this.props.location.pathname;
-    // console.log('path: ',path)
-    // console.log('props: ',this.props)
-
-    // let searchClasses = classNames({ active: path === '/search'})
 
     return (
       <div className='container'>
@@ -28,9 +21,6 @@ export default class Layout extends Component {
           <li role='presentation' className={classNames({active: path === '/testpage'})}>
             <Link to={'/testpage'} >Test Urself</Link>
           </li>
-          {/* <li role='presentation' className={classNames({ active: path === `/gifplayground/${this.props.params.id}`})}>
-            <Link to={`/gifplayground/${this.props.params.id}`} >Blah</Link>
-          </li> */}
 
         </ul>
 

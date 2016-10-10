@@ -26,7 +26,6 @@ export default class CardsTable extends Component {
   }
 
   _onChange () {
-    // CardActions.fetchCards();
     this.setState({
       flashcards: CardsStore.getFlashCards()
     });
@@ -43,7 +42,7 @@ export default class CardsTable extends Component {
 
   render () {
     let { flashcards } = this.state;
-    // console.log('flashcards in table: ', flashcards);
+
     return (
       <div>
         <button onClick={this._fetchCards} className='btn btn-default'>Give me my cards</button>

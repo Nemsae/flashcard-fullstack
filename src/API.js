@@ -1,4 +1,4 @@
-import axios, { get, post } from 'axios';
+import axios, { get, post, put } from 'axios';
 import ServerActions from './actions/ServerActions';
 
 const API = {
@@ -51,7 +51,14 @@ const API = {
   },
 
   updateCard (editedCard) {
-
+    let id = editedCard.id;
+    put(`/flashcards/${id}`, editedCard)
+      .then((res) => {
+        console.log('res: ', res);
+      })
+      .catch((err) => {
+        console.log('Error! API.postNewCard: ', err);
+      });
   }
 
 };

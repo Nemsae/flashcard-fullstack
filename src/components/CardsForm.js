@@ -13,30 +13,14 @@ export default class CardsForm extends Component {
       category: ''
     };
 
-    this._onChange = this._onChange.bind(this);
     this._grabQuestion = this._grabQuestion.bind(this);
     this._grabAnswer = this._grabAnswer.bind(this);
     this._grabCategory = this._grabCategory.bind(this);
     this._submitCard = this._submitCard.bind(this);
   }
 
-  componentWillMount () {
-    CardsStore.startListening(this._onChange);
-  }
-
-  componentWillUnmount () {
-    CardsStore.stopListening(this._onChange);
-  }
-
-  _onChange () {
-    this.setState({
-      // flashcards: CardsStore.getFlashCards()
-    });
-  }
-
   _grabQuestion (e) {
     let input = e.target.value;
-    console.log('input0: ', input);
     this.setState({
       question: input
     });
@@ -44,7 +28,6 @@ export default class CardsForm extends Component {
 
   _grabAnswer (e) {
     let input = e.target.value;
-    console.log('input1: ', input);
     this.setState({
       answer: input
     });
@@ -52,7 +35,6 @@ export default class CardsForm extends Component {
 
   _grabCategory (e) {
     let input = e.target.value;
-    console.log('input2: ', input);
     this.setState({
       category: input
     });
@@ -61,7 +43,6 @@ export default class CardsForm extends Component {
   _submitCard (e) {
     e.preventDefault();
     let { question, answer, category } = this.state;
-    console.log('question: ', question, 'answer: ', answer, 'category: ', category);
 
     let newCard = {
       question,

@@ -11,8 +11,6 @@ const CardActions = {
   },
 
   sendNewCard (newCard) {
-    let { category } = newCard;
-    console.log('category11: ', category);
     API.postNewCard(newCard);
   },
 
@@ -23,7 +21,6 @@ const CardActions = {
   },
 
   fetchCardByCategory (categories) {
-    // console.log('categories in Actions: ', categories);
     AppDispatcher.dispatch({
       type: 'GET_CATEGORIES',
       payload: { categories }
