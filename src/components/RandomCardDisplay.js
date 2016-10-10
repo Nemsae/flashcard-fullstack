@@ -57,7 +57,7 @@ export default class CategorySearchInput extends Component {
           <button onClick={this._showAnswer} className='btn btn-default'>Answer</button>
         </div>;
     }
-    
+
     return (
       <div>
         <button onClick={this._getRandomCard} className='btn btn-default'>Next</button>

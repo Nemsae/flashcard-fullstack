@@ -8,12 +8,12 @@ export default class Layout extends Component {
     let path = this.props.location.pathname;
 
     return (
-      <div className='container'>
+      <div className='container text-center'>
         <h1>My Flashcards</h1>
 
         <ul className='nav nav-tabs'>
-          <li role='presentation' className={classNames({active: path === '/cardspage'})}>
-            <Link to='/cardspage'>Cards Page</Link>
+          <li role='presentation' className={classNames({active: path === '/'})}>
+            <Link to='/'>Cards Page</Link>
           </li>
           <li role='presentation' className={classNames({active: path === '/editpage'})}>
             <Link to={'/editpage'} >Edit Cards</Link>

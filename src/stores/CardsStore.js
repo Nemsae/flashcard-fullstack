@@ -18,42 +18,34 @@ class CardsStore extends EventEmitter {
       switch (type) {
         case 'RECEIVE_CARDS': {
           _flashcards = payload.cards;
-          console.log('_flashcards: ', _flashcards);
           this.emit('CHANGE');
           break;
         }
 
         case 'RECIEVE_CARD_ID': {
           _flashcard = payload.card;
-          console.log('_flashcard: ', _flashcard);
           this.emit('CHANGE');
           break;
         }
 
         case 'GET_CATEGORIES': {
           _randomCard = undefined;
-          // console.log('categories in store: ', payload.categories);
           _categories = payload.categories;
           _categorizedCards = this.categorizeCards();
-          // console.log('categorizedCards in store: ', _categorizedCards);
-          // this.getRandomCard();
           this.emit('CHANGE');
           break;
         }
 
         case 'GET_RANDOM_CARD': {
           _randomCard = this.randomCard();
-          console.log('_randomCard: ', _randomCard);
           this.emit('CHANGE');
           break;
         }
       }
     });
-    //  storage
   }
 
   randomCard () {
-    // console.log('_categorizedCards.length: ', _categorizedCards.length);
     if (_categorizedCards.length === 0) {
       _message = 'No more Cards!';
       return;
@@ -64,8 +56,6 @@ class CardsStore extends EventEmitter {
   }
 
   categorizeCards () {
-    // console.log('_flashcards: ', _flashcards);
-    // console.log('_categories: ', _categories);
     let cardsCategorized = _flashcards.filter((card) => {
       let test = _categories.indexOf(card.category);
 
