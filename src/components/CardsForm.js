@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import CardActions from '../actions/CardActions';
-import CardsStore from '../stores/CardsStore';
 
 export default class CardsForm extends Component {
   constructor () {
@@ -54,32 +53,27 @@ export default class CardsForm extends Component {
   }
 
   render () {
-    // let { flashcards } = this.state;
-    // console.log('flashcards in table: ', flashcards);
     return (
       <div>
-        <form>
+        <form className='myForm'>
           <div className='form-group row'>
-            <label htmlFor='Question' className='col-sm-2 col-htmlForm-label'>Question</label>
-            <div className='col-sm-10'>
+            <div className='col-sm-12'>
               <input onChange={this._grabQuestion} type='text' className='htmlForm-control' id='Question' placeholder='Question' />
             </div>
           </div>
           <div className='htmlForm-group row'>
-            <label htmlFor='Answer' className='col-sm-2 col-htmlForm-label'>Answer</label>
-            <div className='col-sm-10'>
+            <div className='col-sm-12'>
               <input onChange={this._grabAnswer} type='text' className='htmlForm-control' id='Answer' placeholder='Answer' />
             </div>
           </div>
           <div className='htmlForm-group row'>
-            <label htmlFor='Category' className='col-sm-2 col-htmlForm-label'>Category</label>
-            <div className='col-sm-10'>
+            <div className='col-sm-12'>
               <input onChange={this._grabCategory} type='text' className='htmlForm-control' id='Category' placeholder='Category' />
             </div>
           </div>
           <div className='form-group row'>
-            <div className='offset-sm-2 col-sm-10'>
-              <button onClick={this._submitCard} type='submit' className='btn btn-primary'>Add Card</button>
+            <div className='col-sm-12'>
+              <button onClick={this._submitCard} type='submit' className='btn btn-primary addButton'>Add Card</button>
             </div>
           </div>
         </form>

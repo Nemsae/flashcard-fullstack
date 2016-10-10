@@ -10,7 +10,7 @@ import TestPage from './components/TestPage';
 render(
   <Router history={browserHistory}>
     <Route path='/' component={Layout}>
-      <IndexRoute path='/cardspage' component={CardsPage} />
+      <IndexRoute component={CardsPage} />
       <Route path='/editpage' component={EditPage} />
       <Route path='/testpage' component={TestPage} />
     </Route>

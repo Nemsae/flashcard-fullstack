@@ -10,7 +10,6 @@ export default class Layout extends Component {
     return (
       <div className='container text-center'>
         <h1>My Flashcards</h1>
-
         <ul className='nav nav-tabs'>
           <li role='presentation' className={classNames({active: path === '/'})}>
             <Link to='/'>Cards Page</Link>
@@ -21,7 +20,6 @@ export default class Layout extends Component {
           <li role='presentation' className={classNames({active: path === '/testpage'})}>
             <Link to={'/testpage'} >Test Urself</Link>
           </li>
-
         </ul>
 
         {this.props.children}
